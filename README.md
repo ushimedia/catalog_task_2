@@ -18,10 +18,10 @@ https://docs.google.com/spreadsheets/d/1i4g_P8lb-1Ab5zFq2qH-QSs0lQWzKVZG/edit?us
 https://docs.google.com/spreadsheets/d/1i4g_P8lb-1Ab5zFq2qH-QSs0lQWzKVZG/edit?usp=sharing&ouid=100656607474555479650&rtpof=true&sd=true
 
 ## ワイヤーフレーム
-![wire_frame2](https://user-images.githubusercontent.com/103015276/168776377-8a2eb2de-3497-4830-9c6f-202b385ed112.png)
+![wire_frame2](https://user-images.githubusercontent.com/103015276/168778788-c5a078f3-b16f-4fa3-94b7-46889abebe87.png)
 
 ## ER図
-![ER2](https://user-images.githubusercontent.com/103015276/168776348-2a866a7f-32e1-4180-bd15-561eeb6a48ae.png)
+![ER2](https://user-images.githubusercontent.com/103015276/168778807-83746c9f-337c-48cc-a3be-354f4e7de9da.png)
 
 ## 画面遷移図
-![screen_transition2](https://user-images.githubusercontent.com/103015276/168776365-e5455e03-e788-4ed5-9745-2eb2774f106d.png)
+![screen_transition2](https://user-images.githubusercontent.com/103015276/168778825-ea72d536-9a54-4fc5-91be-16ea6e586b99.png)
