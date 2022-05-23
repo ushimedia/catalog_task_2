@@ -21,7 +21,6 @@ https://docs.google.com/spreadsheets/d/1QazMiXZhHq-u7GwINq-6MnzTYz-eis2g/edit?us
 ![wire_frame2](https://user-images.githubusercontent.com/103015276/169783270-384f5119-26ef-42a1-b03f-a1537963e025.png)
 
 ## ER図
-![ER2](https://user-images.githubusercontent.com/103015276/169783242-c62b717c-dab2-4a8b-a009-f36ef0f0cee8.png)
-
+![ER2](https://user-images.githubusercontent.com/103015276/169785207-4c18f878-a561-404a-93cf-4497f94dc814.png)
 ## 画面遷移図
 ![screen_transition2](https://user-images.githubusercontent.com/103015276/169783256-09d4f95e-1abd-4fd9-9dbc-1485dece5a37.png)
