@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_24_011029) do
+ActiveRecord::Schema.define(version: 2022_05_24_085938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2022_05_24_011029) do
   create_table "attendances", force: :cascade do |t|
     t.datetime "attendance_time", null: false
     t.datetime "leave_office_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "holidays", force: :cascade do |t|
+    t.date "paid_holiday", null: false
+    t.boolean "result", default: false, null: false
+    t.bigint "approver"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
