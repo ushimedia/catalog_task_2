@@ -22,7 +22,7 @@ class AttendancesController < ApplicationController
   # POST /attendances or /attendances.json
   def create
     @attendance = Attendance.new(attendance_params)
-
+    @attendance.user = current_user
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to attendances_path(@attendance), notice: "おはようございます！" }
