@@ -4,7 +4,7 @@ class AttendancesController < ApplicationController
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
-  end
+  end  
 
   # GET /attendances/1 or /attendances/1.json
   def show

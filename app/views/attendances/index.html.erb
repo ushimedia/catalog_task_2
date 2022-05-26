@@ -1,19 +1,33 @@
-<h1>Attendances</h1>
+<div class="container-fluid text-center">
+<H2>Attendances</H2>
+<div class="row">
+<div class="col d-flex justify-content-around">
+
+
 
 <table>
   <thead>
     <tr>
-      <th>今月の勤怠</th>
+      
+      <th>出勤時間</th>
+      <th>諸操作①</th>
+      <th>諸操作②</th>
+      <th>諸操作③</th>
+      <th>諸操作④</th>
       <th colspan="3"></th>
+
     </tr>
   </thead>
   
   
 
   <tbody>
+  
     <% @attendances.each do |attendance| %>
       <tr>
+       
         <td><%= attendance.attendance_time.to_s(:datetime_jp) %></td>
+        <td><%= attendance.user_id %></td>
         <td><%= link_to 'Show', attendance %></td>
         <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
         <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +38,10 @@
 
 <br>
 
+
+
+</div>
+
+</div>
 <%= link_to 'New Attendance', new_attendance_path %>
+</div>

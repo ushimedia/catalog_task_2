@@ -1,4 +1,9 @@
+<div class="container-fluid text-center">
 <H2>アカウント情報</H2>
+<div class="row">
+<div class="col-3"></div>
+<div class="col-6">
+
 <p>名前: <%= @user.name %></p>
 <p>社員番号: <%= @user.employee_id %></p>
 <p>メールアドレス: <%= @user.email %></p><br>
@@ -6,3 +11,7 @@
 <%= link_to '編集', edit_user_registration_path(current_user) %>
 
 <%= button_to '退会', registration_path(current_user), data: { confirm: ('本当によろしいですか？') }, method: :delete %>
+</div>
+<div class="col-3"></div>
+</div>
+</div>

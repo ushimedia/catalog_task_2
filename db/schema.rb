@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_05_25_070255) do
   create_table "attendances", force: :cascade do |t|
     t.datetime "attendance_time", null: false
     t.datetime "leave_office_time"
+    t.date "date_of_use"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
