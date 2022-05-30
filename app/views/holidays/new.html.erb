@@ -1,13 +1,50 @@
 <div class="container applicant-wrapper">
+
+<%= form_with(model: @holiday, local: true, url: holidays_path ) do |f| %>
     
+  
+    <div class="field">
+      <%= f.label :有給使用予定日 %><br />
+      <%= f.date_field :paid_holiday, autofocus: true, autocomplete: "paid_holiday" %>
+    </div>
+   
+    <%= f.submit "申請" %>
+  </div>
+
+<% end %>
+
+
 
 
 
 <h3>有給処理待ち一覧</h3>
     
     <div class="row">
-       
-    
+    <table>
+    <thead>
+    <tr>
+      <th>申請日</th>
+      <th>有給使用予定日</th>
+      <th>申請先</th>
+      <th>承認状況</th>
+      
+      <th colspan="3"></th>
+
+    </tr>
+  </thead>
+  
+    <tbody>
+    <% @holidays.each do |holiday| %>
+      <tr>
+      <td><%= holiday.created_at.strftime("%m月%d日") %></td>
+        <td><%= holiday.paid_holiday %></td>
+        <td><%= holiday.paid_holiday %></td>
+        <td><%= holiday.result %></td>
+        <td><%= holiday.approver %></td>
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
     </div>
     
 </div>

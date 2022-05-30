@@ -4,7 +4,6 @@ class CreateHolidays < ActiveRecord::Migration[6.0]
       t.date :paid_holiday, null: false
       t.boolean :result, null: false, default: 0
       t.bigint :approver
-      
 
       t.timestamps
     end
