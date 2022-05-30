@@ -4,8 +4,15 @@
 <div class="col d-flex justify-content-around">
 
 
-<%= calendar(start_date_param: :my_date) do |date| %>
+<%= month_calendar events: @attendances do |date, attendances| %>
+  
   <%= date %>
+
+  <% attendances.each do |attendance| %>
+    <div>
+      <%= attendance.attendance_time %>
+    </div>
+  <% end %>
 <% end %>
 
 <table>
