@@ -12,7 +12,7 @@
     color: ivory;
     text-decoration: none;
     display: block; /*幅と高さを持ったブロック要素*/
-    line-height: 60px; /*ヘッダーの高さと同じ60px*/
+    line-height: 55px; /*ヘッダーの高さと同じ60px*/
     padding: 0 20px; /*各リスト項目の余白左右20px*/
   }
   

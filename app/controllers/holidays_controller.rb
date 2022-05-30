@@ -1,0 +1,4 @@
+class HolidaysController < ApplicationController
+
+    
+end

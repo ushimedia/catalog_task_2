@@ -1,3 +1,4 @@
 class Holiday < ApplicationRecord
-    belongs_to :user
+
+    has_many :follow_requests, dependent: :destroy
 end

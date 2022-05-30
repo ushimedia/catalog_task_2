@@ -4,6 +4,13 @@ class AttendancesController < ApplicationController
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
+    attendances = @attendances
+    @attendances = current_user.attendances
+    
+    @first_day = Date.current.beginning_of_month
+    @last_day = @first_day.end_of_month
+    one_month = [*@first_day..@last_day]
+
   end  
 
   # GET /attendances/1 or /attendances/1.json
@@ -65,6 +72,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:attendance_time)
+      params.require(:attendance).permit(:attendance_time, :date_of_use)
     end
 end

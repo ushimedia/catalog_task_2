@@ -4,11 +4,14 @@
 <div class="col d-flex justify-content-around">
 
 
+<%= calendar(start_date_param: :my_date) do |date| %>
+  <%= date %>
+<% end %>
 
 <table>
   <thead>
     <tr>
-      
+      <th>出勤日</th>
       <th>出勤時間</th>
       <th>諸操作①</th>
       <th>諸操作②</th>
@@ -19,16 +22,14 @@
     </tr>
   </thead>
   
-  
-
   <tbody>
   
-    <% @attendances.each do |attendance| %>
+  <% @attendances.each do |attendance| %>
       <tr>
-       
-        <td><%= attendance.attendance_time.to_s(:datetime_jp) %></td>
+    
+        <td><%= attendance.attendance_time.strftime("%m月%d日") %></td>
+        <td><%= attendance.attendance_time.strftime("%-H時%-M分") %></td>
         <td><%= attendance.user_id %></td>
-        <td><%= link_to 'Show', attendance %></td>
         <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
         <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
