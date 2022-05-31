@@ -1,6 +1,7 @@
-<h1>Editing Attendance</h1>
+<div class="container-fluid text-center">
+
+<H4><%= @attendance.attendance_time.strftime("%Y年%-m月%-d日") %></H4>
 
 <%= render 'form', attendance: @attendance %>
 
-<%= link_to 'Show', @attendance %> |
 <%= link_to 'Back', attendances_path %>

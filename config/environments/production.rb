@@ -109,4 +109,21 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  PunchTime.configure do |config|
+    config.shift_in_time = Time.parse('9:00')
+    config.shift_out_time = Time.parse('17:30')
+    config.breaks = [
+        {
+        start_time: Time.parse('12:00'),
+        end_time: Time.parse('13:00')
+        }
+    ]
+    config.night = {
+        start_time: Time.parse('22:00'),
+        end_time: Time.parse('05:00')
+    }
+    config.offset = '+0900'
+    end
+
+
 end

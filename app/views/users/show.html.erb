@@ -8,8 +8,12 @@
 <p>社員番号: <%= @user.employee_id %></p>
 <p>メールアドレス: <%= @user.email %></p><br>
 
-<%= link_to '編集', edit_user_registration_path(current_user) %>
 
+
+<%=link_to("edit") do %>
+    <button>編集</button>
+  <%end%>
+  
 <%= button_to '退会', registration_path(current_user), data: { confirm: ('本当によろしいですか？') }, method: :delete %>
 </div>
 <div class="col-3"></div>

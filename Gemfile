@@ -35,6 +35,7 @@ gem 'devise-i18n'
 gem 'rails_admin', '~> 3.0'
 gem 'cancancan'
 gem 'simple_calendar', '~> 2.4'
+gem 'punch_time'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

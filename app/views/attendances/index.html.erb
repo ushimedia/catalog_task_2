@@ -1,12 +1,11 @@
 <div class="container-fluid text-center">
-
+<H4><%= Time.now.strftime("%Y年%-m月%-d日") %></H4>
 <%= render 'form', attendance: @attendance %>
-
-
 
 <H3><%= @user.name %>/スケジュール・実績一覧</H3>
 <div class="row">
-<div class="col d-flex justify-content-around">
+<div class="col-2"></div>
+<div class="col-8 d-flex justify-content-center">
 
 
 <%= month_calendar events: @attendances do |date, attendances| %>
@@ -17,21 +16,14 @@
   <% attendances.each do |attendance| %>
     <div>
         <td><%= attendance.attendance_time.strftime("%-H時%-M分") %></td>
-        <td><%= attendance.leave_office_time %></td>
-        <td><%= attendance.user_id %></td>
-        <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
-        <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= attendance&.leave_office_time&.strftime("%-H時%-M分") %></td>
+        <td><%= link_to '修正', edit_attendance_path(attendance) %></td>
+        <td><%= link_to '削除', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
   <% end %>
 <% end %>
-
-
 <br>
 
-
-
 </div>
-
-</div>
-<%= link_to 'New Attendance', new_attendance_path %>
+<div class="col-2"></div>
 </div>

@@ -20,6 +20,8 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new
   end
 
+  
+
   # GET /attendances/1/edit
   def edit
   end
@@ -43,7 +45,7 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
+        format.html { redirect_to attendances_path(@attendance), notice: "Attendance was successfully updated." }
         format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -70,6 +72,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:attendance_time, :leave_office_times)
+      params.require(:attendance).permit(:attendance_time, :leave_office_time )
     end
 end
