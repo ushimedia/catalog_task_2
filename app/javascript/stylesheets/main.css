@@ -21,12 +21,21 @@
     height: 40px;
     background: black;
     opacity: 0.7;
-    position: absolute;
+    
     bottom: 0;
   } 
 
 .footer p{
     color: ivory;
     text-align: center;
+  }
+
+  body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+  }
+  main {
+    flex: 1;
   }
   

@@ -10,17 +10,17 @@
       <tr>
       
       <th>出勤日</th>
-      <th>出勤時間</th>
+      <th>出勤</th>
+      <th>退勤</th>
+      <th>残業時間</th>
       <th>諸操作①</th>
-      <th>諸操作②</th>
-      <th>諸操作③</th>
-      <th>諸操作④</th>
+      <th>勤怠修正</th>
       <th colspan="3"></th>
 
-   
-        <% date_range.slice(0, 1).each do |day| %>
-          <th><%= t('date.abbr_day_names')[day.wday] %></th>
-        <% end %>
+      <% date_range.slice(0, 1).each do |day| %>
+        <th><%= t('date.abbr_day_names')[day.wday] %></th>
+      <% end %>
+        
       </tr>
     </thead>
 
@@ -37,7 +37,6 @@
               <% else %>
                 <% passed_block.call day, sorted_events.fetch(day, []) %>
               <% end %>
-              テスト1
             <% end %>
             
           <% end %>

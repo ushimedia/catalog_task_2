@@ -6,11 +6,9 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
     attendances = @attendances
     @attendances = current_user.attendances
+    @user = current_user
+    @attendance = Attendance.new
     
-    @first_day = Date.current.beginning_of_month
-    @last_day = @first_day.end_of_month
-    one_month = [*@first_day..@last_day]
-
   end  
 
   # GET /attendances/1 or /attendances/1.json

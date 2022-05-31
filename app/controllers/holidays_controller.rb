@@ -26,13 +26,22 @@ def create
   def show
   end
 
+  def destroy
+    @holiday.destroy
+
+    respond_to do |format|
+      format.html { redirect_to new_holiday_path(@holiday), notice: "Attendance was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
   private
   def set_holiday
-    @holiday = Holiday.where(id: params[:id])
+    @holiday = Holiday.find(params[:id])
   end
  
   def holiday_params
-    params.require(:holiday).permit(:paid_holiday, :result, :approver)
+    params.permit(:paid_holiday, :result, :approver)
   end
   
 end

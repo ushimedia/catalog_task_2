@@ -1,4 +1,4 @@
-<div class="container applicant-wrapper">
+<div class="container">
 
 <%= form_with(model: @holiday, local: true, url: holidays_path ) do |f| %>
     
@@ -7,6 +7,12 @@
       <%= f.label :有給使用予定日 %><br />
       <%= f.date_field :paid_holiday, autofocus: true, autocomplete: "paid_holiday" %>
     </div>
+
+    <div class="field">
+      <%= f.label :申請先 %><br />
+      <%= f.text_field :approver, autofocus: true, autocomplete: "approver" %>
+    </div>
+    
    
     <%= f.submit "申請" %>
   </div>
@@ -15,11 +21,10 @@
 
 
 
-
-
+<% if current_user.general? %>
 <h3>有給処理待ち一覧</h3>
     
-    <div class="row">
+    
     <table>
     <thead>
     <tr>
@@ -38,14 +43,49 @@
       <tr>
       <td><%= holiday.created_at.strftime("%m月%d日") %></td>
         <td><%= holiday.paid_holiday %></td>
-        <td><%= holiday.paid_holiday %></td>
-        <td><%= holiday.result %></td>
         <td><%= holiday.approver %></td>
+        <td><%= holiday.result %></td>
+        <td><%= link_to 'Destroy', holiday, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </tbody>
     </table>
-    </div>
+    
     
 </div>
+<% end %>  
+
+<% if current_user.superuser? %>
+<h3>有給処理待ち一覧</h3>
+    
+    
+    <table>
+    <thead>
+    <tr>
+      <th>申請日</th>
+      <th>有給使用予定日</th>
+      <th>申請先</th>
+      <th>承認状況</th>
+      
+      <th colspan="3"></th>
+
+    </tr>
+  </thead>
   
+    <tbody>
+    <% @holidays.each do |holiday| %>
+      <tr>
+      <td><%= holiday.created_at.strftime("%m月%d日") %></td>
+        <td><%= holiday.paid_holiday %></td>
+        <td><%= holiday.approver %></td>
+        <td><%= holiday.result %></td>
+        <td><%= link_to '取り消し', holiday, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+    
+    
+</div>
+<% end %>  

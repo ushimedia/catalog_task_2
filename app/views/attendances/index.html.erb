@@ -1,5 +1,10 @@
 <div class="container-fluid text-center">
-<H2>Attendances</H2>
+
+<%= render 'form', attendance: @attendance %>
+
+
+
+<H3><%= @user.name %>/スケジュール・実績一覧</H3>
 <div class="row">
 <div class="col d-flex justify-content-around">
 
@@ -7,42 +12,19 @@
 <%= month_calendar events: @attendances do |date, attendances| %>
   
   <%= date %>
+ 
 
   <% attendances.each do |attendance| %>
     <div>
-      <%= attendance.attendance_time %>
-    </div>
-  <% end %>
-<% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>出勤日</th>
-      <th>出勤時間</th>
-      <th>諸操作①</th>
-      <th>諸操作②</th>
-      <th>諸操作③</th>
-      <th>諸操作④</th>
-      <th colspan="3"></th>
-
-    </tr>
-  </thead>
-  
-  <tbody>
-  
-  <% @attendances.each do |attendance| %>
-      <tr>
-    
-        <td><%= attendance.attendance_time.strftime("%m月%d日") %></td>
         <td><%= attendance.attendance_time.strftime("%-H時%-M分") %></td>
+        <td><%= attendance.leave_office_time %></td>
         <td><%= attendance.user_id %></td>
         <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
         <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+  <% end %>
+<% end %>
+
 
 <br>
 
