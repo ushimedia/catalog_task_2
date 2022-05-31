@@ -36,6 +36,9 @@ gem 'rails_admin', '~> 3.0'
 gem 'cancancan'
 gem 'simple_calendar', '~> 2.4'
 gem 'punch_time'
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
