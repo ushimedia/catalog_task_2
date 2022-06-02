@@ -39,6 +39,7 @@ gem 'punch_time'
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
+gem 'roo'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
