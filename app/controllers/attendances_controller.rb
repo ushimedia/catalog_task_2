@@ -8,8 +8,6 @@ class AttendancesController < ApplicationController
     @attendances = current_user.attendances
     @user = current_user
     @attendance = Attendance.new
-    @logs = Log.all
-    logs = @logs
     
   end  
 

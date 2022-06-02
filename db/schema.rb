@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2022_06_01_070702) do
 
   create_table "logs", force: :cascade do |t|
     t.bigint "user_id"
-    t.datetime "log_attendance_time"
-    t.datetime "log_leave_time"
+    t.datetime "log_time"
     t.integer "log_number"
+    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_logs_on_user_id"

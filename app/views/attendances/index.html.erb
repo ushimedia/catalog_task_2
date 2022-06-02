@@ -5,10 +5,8 @@
 <H3><%= @user.name %>/スケジュール・実績一覧</H3>
 
 <H5>ログアップロード</H5>
-<%= form_tag import_logs_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "インポート" %>
-<% end %>
+
+
 
 <div class="row">
 <div class="col-2"></div>
@@ -28,29 +26,16 @@
         <td><%= attendance.leave_office_time.to_i %></td>
         <td><%= attendance.attendance_time.to_i %></td>
         <td><%= attendance.user_id %></td>
+       
         <td><%= attendance.leave_office_time.to_i - attendance.attendance_time.to_i - 30600 %></td>
         <td><%= link_to '修正', edit_attendance_path(attendance) %></td>
         <td><%= link_to '削除', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
   <% end %>
 <% end %>
+
 </div>
-<%= month_calendar events: @logs do |date, logs| %>
-  
-  <%= date %>
 
-
-<% logs.each do |log| %>
-  <div>
-      <td><%= log.id %></td>
-      <td><%= log.user_id %></td>
-      <td><%= log&.log_attendance_time&.strftime("%-H時%-M分") %></td>
-      <td><%= log&.log_leave_time&.strftime("%-H時%-M分") %></td>
-      <td><%= log.created_at.strftime("%-H時%-M分") %></td>
-    </div>
-<% end %>
-<% end %>
-<br>
 
 
 <div class="col-2"></div>
