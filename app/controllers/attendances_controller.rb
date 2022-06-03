@@ -3,11 +3,13 @@ class AttendancesController < ApplicationController
 
   # GET /attendances or /attendances.json
   def index
-    @attendances = Attendance.all
+    @attendances = Attendance.left_joins(:logs).where(user_id: current_user)
     attendances = @attendances
     @attendances = current_user.attendances
     @user = current_user
     @attendance = Attendance.new
+    @logs = Log.all
+
     
   end  
 

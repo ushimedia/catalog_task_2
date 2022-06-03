@@ -1,6 +1,6 @@
 class Attendance < ApplicationRecord
     belongs_to :user
-  #  has_many :logs, through: :user
+    has_many :logs, through: :user
     validates :attendance_time, presence: true
 
     def start_time
