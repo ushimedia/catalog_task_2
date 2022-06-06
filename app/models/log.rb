@@ -1,7 +1,7 @@
 class Log < ApplicationRecord
     belongs_to :user
     has_many :attendances, through: :user
-
+    enum status: { ログイン: 7001, ログオフ: 7002 }
 
     def start_time
         self.log_date #self.の後はsimple_calendarに表示させるためのカラムを指定

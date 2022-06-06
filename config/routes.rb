@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   }
   patch 'attendances/finish' => 'attendances#finish', as: 'finish'
   
-  resources :attendances
+  resources :attendances do
+    collection { post :import }
+  end
   resources :users
   resources :holidays
-  resources :logs do
-  collection { post :import }
-end
+  resources :log
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   

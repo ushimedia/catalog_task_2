@@ -12,7 +12,7 @@ User.create(name: '高橋三郎', employee_id: '10003', email: 'test3@yahoo.co.j
 User.create(name: '渡辺四郎', employee_id: '10004', email: 'test4@yahoo.co.jp', password: 'test444', password_confirmation: 'test444', role: 0)
 User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.jp', password: 'test555', password_confirmation: 'test555', role: 0)
 
-30.times do |n|
+31.times do |n|
     Attendance.create!(
       attendance_date:"2022-05-#{n + 1}",
       attendance_time: "09:00:00",
@@ -20,31 +20,35 @@ User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.j
       user_id: 1,
     )
   end
-  30.times do |n|
+  31.times do |n|
     Attendance.create!(
-      attendance_time: "2022-05-#{n + 1} 09:00:00",
-      leave_office_time: "2022-05-#{n + 1} 17:30:00",
+      attendance_date:"2022-05-#{n + 1}",
+      attendance_time: "09:00:00",
+      leave_office_time: "17:30:00",
       user_id: 2,
     )
   end
-  30.times do |n|
+  31.times do |n|
     Attendance.create!(
-      attendance_time: "2022-05-#{n + 1} 09:00:00",
-      leave_office_time: "2022-05-#{n + 1} 17:30:00",
+      attendance_date:"2022-05-#{n + 1}",
+      attendance_time: "09:00:00",
+      leave_office_time: "17:30:00",
       user_id: 3,
     )
   end
-  30.times do |n|
+  31.times do |n|
     Attendance.create!(
-      attendance_time: "2022-05-#{n + 1} 09:00:00",
-      leave_office_time: "2022-05-#{n + 1} 17:30:00",
+      attendance_date:"2022-05-#{n + 1}",
+      attendance_time: "09:00:00",
+      leave_office_time: "17:30:00",
       user_id: 4,
     )
   end
-  30.times do |n|
+  31.times do |n|
     Attendance.create!(
-      attendance_time: "2022-05-#{n + 1} 09:00:00",
-      leave_office_time: "2022-05-#{n + 1} 17:30:00",
+      attendance_date:"2022-05-#{n + 1}",
+      attendance_time: "09:00:00",
+      leave_office_time: "17:30:00",
       user_id: 5,
     )
   end

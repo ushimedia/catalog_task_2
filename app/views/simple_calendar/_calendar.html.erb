@@ -6,16 +6,23 @@
   </div>
 
   <table class="table table-striped">
-    <thead>
-      <tr>
-        <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.abbr_day_names')[day.wday] %></th>
-        <% end %>
-      </tr>
-    </thead>
+  <thead>
+  <tr>
+  
+  
+  <th>ログイン</th>
+  <th>ログオフ</th>
+  <th>残業時間</th>
+  <th>深夜</th>
+  <th>勤怠修正</th>
+  <th>削除</th>
+  <th colspan="3"></th>
+    
+  </tr>
+</thead>
 
     <tbody>
-      <% date_range.each_slice(7) do |week| %>
+      <% date_range.each_slice(1) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day) do %>
