@@ -33,6 +33,7 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(attendance_params)
     @attendance.user = current_user
+    @attendance.attendance_date = Date.today
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to attendances_path(@attendance), notice: "おはようございます！" }
@@ -75,6 +76,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:attendance_time, :leave_office_time )
+      params.require(:attendance).permit(:attendance_time, :leave_office_time,:attendance_date )
     end
 end

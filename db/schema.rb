@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 2022_06_01_070702) do
   enable_extension "plpgsql"
 
   create_table "attendances", force: :cascade do |t|
-    t.datetime "attendance_time", null: false
-    t.datetime "leave_office_time"
+    t.date "attendance_date"
+    t.time "attendance_time", null: false
+    t.time "leave_office_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false

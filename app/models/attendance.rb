@@ -4,7 +4,7 @@ class Attendance < ApplicationRecord
     validates :attendance_time, presence: true
 
     def start_time
-        self.attendance_time #self.の後はsimple_calendarに表示させるためのカラムを指定
+        self.attendance_date #self.の後はsimple_calendarに表示させるためのカラムを指定
       end
 
    
