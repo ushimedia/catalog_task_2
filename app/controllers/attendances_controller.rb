@@ -3,12 +3,13 @@ class AttendancesController < ApplicationController
 
   # GET /attendances or /attendances.json
   def index
-    @attendances = Attendance.left_joins(:logs).where(user_id: current_user)
+    @attendances = Attendance.all
     attendances = @attendances
     @attendances = current_user.attendances
     @user = current_user
     @attendance = Attendance.new
     @logs = Log.all
+    @logs = current_user.logs
 
     
   end  
@@ -33,7 +34,7 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(attendance_params)
     @attendance.user = current_user
-    @attendance.attendance_date = Date.today
+    @attendance.attendance_date = @attendance.attendance_time
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to attendances_path(@attendance), notice: "おはようございます！" }

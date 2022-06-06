@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2022_06_01_070702) do
 
   create_table "logs", force: :cascade do |t|
     t.bigint "user_id"
+    t.date "log_date"
     t.datetime "log_time"
-    t.integer "log_number"
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -14,8 +14,9 @@ User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.j
 
 30.times do |n|
     Attendance.create!(
-      attendance_time: "2022-05-#{n + 1} 09:00:00",
-      leave_office_time: "2022-05-#{n + 1} 17:30:00",
+      attendance_date:"2022-05-#{n + 1}",
+      attendance_time: "09:00:00",
+      leave_office_time: "17:30:00",
       user_id: 1,
     )
   end
