@@ -17,19 +17,26 @@ class Attendance < ApplicationRecord
             @attendance = find_by(attendance_date: row['日付と時刻']) || new
 
             row_hash = row.to_hash.slice(*CSV_HEADER.keys)
-            @attendance.attributes = row_hash.transform_keys(&CSV_HEADER.method(:[]))
+         
+
+
+          @attendance.attributes = row_hash.transform_keys(&CSV_HEADER.method(:[]))
+
+        
+
+
             
             @attendance.save!(validate: false)
           
           
        
-        end
+      
       end
       
 
-   CSV_HEADER = {
-    '日付と時刻' => 'attendance_date',
-   # 'イベント ID' => 'status'
-  }.freeze
-
+ #  CSV_HEADER = {
+ #   '日付と時刻' => 'attendance_date',
+ #  'イベント ID' => 'status'
+ # }.freeze
+end
 end

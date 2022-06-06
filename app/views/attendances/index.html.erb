@@ -5,7 +5,7 @@
 <H3><%= @user.name %>/スケジュール・実績一覧</H3>
 
 <H5>ログアップロード</H5>
-<%= form_tag import_attendances_path, multipart: true do %>
+<%= form_tag import_logs_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "インポート" %>
 <% end %>
