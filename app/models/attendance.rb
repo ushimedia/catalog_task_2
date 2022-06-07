@@ -16,7 +16,7 @@ class Attendance < ApplicationRecord
         CSV.foreach(file.path, headers: true) do |row|
             @attendance = find_or_initialize_by(attendance_date: row[1])
             if @attendance.new_record? 
-              @attendance.save(attendance_date: Date.today)
+              @attendance.save!(attendance_date: Date.today)
             end
           
        if row[3] == '7001'
