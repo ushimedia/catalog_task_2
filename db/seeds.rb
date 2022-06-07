@@ -15,45 +15,40 @@ User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.j
 31.times do |n|
     Attendance.create!(
       attendance_date:"2022-05-#{n + 1}",
-      attendance_time: "09:00:00",
-      leave_office_time: "17:30:00",
-     
+      attendance_time: "10:00:00",
+      leave_office_time: "19:00:00",
       user_id: 1,
     )
   end
   31.times do |n|
     Attendance.create!(
       attendance_date:"2022-05-#{n + 1}",
-      attendance_time: "09:00:00",
-      leave_office_time: "17:30:00",
-     
+      attendance_time: "10:00:00",
+      leave_office_time: "19:00:00",
       user_id: 2,
     )
   end
   31.times do |n|
     Attendance.create!(
       attendance_date:"2022-05-#{n + 1}",
-      attendance_time: "09:00:00",
-      leave_office_time: "17:30:00",
-     
+      attendance_time: "10:00:00",
+      leave_office_time: "19:00:00",
       user_id: 3,
     )
   end
   31.times do |n|
     Attendance.create!(
       attendance_date:"2022-05-#{n + 1}",
-      attendance_time: "09:00:00",
-      leave_office_time: "17:30:00",
-     
+      attendance_time: "10:00:00",
+      leave_office_time: "19:00:00",
       user_id: 4,
     )
   end
   31.times do |n|
     Attendance.create!(
       attendance_date:"2022-05-#{n + 1}",
-      attendance_time: "09:00:00",
-      leave_office_time: "17:30:00",
-     
+      attendance_time: "10:00:00",
+      leave_office_time: "19:00:00",
       user_id: 5,
     )
   end
