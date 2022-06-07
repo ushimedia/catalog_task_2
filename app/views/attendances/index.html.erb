@@ -19,7 +19,7 @@
 
 
 <%= date.day %>
-  <% attendances.each do |attendance| %>
+  <% attendances.zip(@logs).each do |attendance, log| %>
     
     <div>
      
@@ -35,6 +35,19 @@
   <% end %>
 <% end %>
 
+<%= month_calendar(events: @logs) do |date, logs| %>
+
+
+  <%= date.day %>
+    <% logs.each do |log| %>
+      
+      <div>
+          <td><%= log&.status %></td>
+          <td><%= log&.log_time&.strftime("%-H時%-M分") %></td>
+          <td><%= link_to '削除', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
+    <% end %>
+  <% end %>
 
 
 </div>

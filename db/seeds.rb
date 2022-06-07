@@ -17,8 +17,7 @@ User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.j
       attendance_date:"2022-05-#{n + 1}",
       attendance_time: "09:00:00",
       leave_office_time: "17:30:00",
-      log_attendance_time: "08:55:00",
-      log_leave_time: "18:32:00",
+     
       user_id: 1,
     )
   end
@@ -27,8 +26,7 @@ User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.j
       attendance_date:"2022-05-#{n + 1}",
       attendance_time: "09:00:00",
       leave_office_time: "17:30:00",
-      log_attendance_time: "08:55:00",
-      log_leave_time: "18:32:00",
+     
       user_id: 2,
     )
   end
@@ -37,8 +35,7 @@ User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.j
       attendance_date:"2022-05-#{n + 1}",
       attendance_time: "09:00:00",
       leave_office_time: "17:30:00",
-      log_attendance_time: "08:55:00",
-      log_leave_time: "18:32:00",
+     
       user_id: 3,
     )
   end
@@ -47,8 +44,7 @@ User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.j
       attendance_date:"2022-05-#{n + 1}",
       attendance_time: "09:00:00",
       leave_office_time: "17:30:00",
-      log_attendance_time: "08:55:00",
-      log_leave_time: "18:32:00",
+     
       user_id: 4,
     )
   end
@@ -57,8 +53,7 @@ User.create(name: '真島吾朗', employee_id: '10005', email: 'test5@yahoo.co.j
       attendance_date:"2022-05-#{n + 1}",
       attendance_time: "09:00:00",
       leave_office_time: "17:30:00",
-      log_attendance_time: "08:55:00",
-      log_leave_time: "18:32:00",
+     
       user_id: 5,
     )
   end
