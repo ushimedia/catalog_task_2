@@ -14,29 +14,27 @@ class Attendance < ApplicationRecord
 
       def self.import(file)
         CSV.foreach(file.path, headers: true) do |row|
-            @attendance = find_by(attendance_date: row['日付と時刻']) || new
-
-            row_hash = row.to_hash.slice(*CSV_HEADER.keys)
-         
-
-
-          @attendance.attributes = row_hash.transform_keys(&CSV_HEADER.method(:[]))
-
-        
-
-
-            
+            @attendance = find_or_initialize_by(attendance_date: row[1])
+            if @attendance.new_record? 
+              @attendance.save(attendance_date: Date.today)
+            end
+          
+       if row[3] == '7001'
+        @attendance.log_attendance_time = row[1]
+      elsif row[3] == '7002'
+        @attendance.log_leave_time = row[1]
+       else
+      
+       end  
             @attendance.save!(validate: false)
-          
-          
-       
+        end
+      
       
       end
       
 
- #  CSV_HEADER = {
- #   '日付と時刻' => 'attendance_date',
- #  'イベント ID' => 'status'
- # }.freeze
-end
+   CSV_HEADER = {
+    '日付と時刻' => 'log_attendance_time',
+  # 'イベント ID' => 'status'
+  }.freeze
 end

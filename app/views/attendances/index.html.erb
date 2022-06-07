@@ -5,7 +5,7 @@
 <H3><%= @user.name %>/スケジュール・実績一覧</H3>
 
 <H5>ログアップロード</H5>
-<%= form_tag import_logs_path, multipart: true do %>
+<%= form_tag import_attendances_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "インポート" %>
 <% end %>
@@ -16,38 +16,22 @@
 <div class="col-8 d-flex justify-content-center">
 
 <%= month_calendar(events: @attendances) do |date, attendances| %>
-
-
 <%= date.day %>
-  <% attendances.zip(@logs).each do |attendance, log| %>
+  <% attendances.each do |attendance| %>
     
     <div>
      
      
-        <td><%= attendance.attendance_time.strftime("%-H時%-M分") %></td>
+        <td><%= attendance&.attendance_time&.strftime("%-H時%-M分") %></td>
         <td><%= attendance&.leave_office_time&.strftime("%-H時%-M分") %></td>
         <td><%= attendance&.log_attendance_time&.strftime("%-H時%-M分") %></td>
         <td><%= attendance&.log_leave_time&.strftime("%-H時%-M分") %></td>
-
+        <td><%= attendance.leave_office_time - attendance.attendance_time %></td>
         <td><%= link_to '修正', edit_attendance_path(attendance) %></td>
         <td><%= link_to '削除', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
   <% end %>
 <% end %>
-
-<%= month_calendar(events: @logs) do |date, logs| %>
-
-
-  <%= date.day %>
-    <% logs.each do |log| %>
-      
-      <div>
-          <td><%= log&.status %></td>
-          <td><%= log&.log_time&.strftime("%-H時%-M分") %></td>
-          <td><%= link_to '削除', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </div>
-    <% end %>
-  <% end %>
 
 
 </div>
