@@ -2,7 +2,7 @@ class Attendance < ApplicationRecord
     belongs_to :user
     has_many :logs, through: :user
     validates :attendance_date, presence: true, uniqueness: { scope: :user_id }
-    validate :start_end_check
+   # validate :start_end_check, if: published?
 
     def start_time
         self.attendance_date #self.の後はsimple_calendarに表示させるためのカラムを指定
@@ -13,11 +13,11 @@ class Attendance < ApplicationRecord
         self.attendance_time < self.leave_office_time
       end
 
-    def self.import(file)
+    def self.import(file, current)
         CSV.foreach(file.path, headers: true) do |row|
-            @attendance = find_or_initialize_by(attendance_date: row[1])
+            @attendance = find_or_initialize_by(attendance_date: row[1], user_id: current)
             if @attendance.new_record? 
-              @attendance.save!(attendance_date: Date.today, validate: false)
+              @attendance.save!(attendance_date: Date.today, user_id: current, validate: false)
             end
           
        if row[3] == '7001'

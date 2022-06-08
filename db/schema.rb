@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_06_01_070702) do
     t.datetime "log_leave_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_attendances_on_user_id"
   end
 

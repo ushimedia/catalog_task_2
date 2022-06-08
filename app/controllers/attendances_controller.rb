@@ -1,7 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: %i[ show edit update destroy ]
- # before_action :set_import, only: %i[ import ]
-
+ 
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
@@ -25,10 +24,7 @@ class AttendancesController < ApplicationController
   end
 
   def import
-    Attendance.import(params[:file])
-    @attendance = Attendance.where(user_id: nil)
-    @attendance.update(user_id: current_user.id)
-    
+    Attendance.import(params[:file], current_user.id)
     redirect_to root_path
   end
 
