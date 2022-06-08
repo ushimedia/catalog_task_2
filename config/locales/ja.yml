@@ -1,6 +1,12 @@
 ---
 ja:
   activerecord:
+    models:
+      attendance: 勤怠
+    attributes:
+      attendance:
+        leave_office_time: 勤務終了時間
+  activerecord:
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -205,5 +211,4 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-  attendance:
-   leave_office_time: "勤務終了時間"
+ 

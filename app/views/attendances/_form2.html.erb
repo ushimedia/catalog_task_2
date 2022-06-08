@@ -13,11 +13,13 @@
   
      <div class="field">
        <%= form.label :勤務開始 %>
+       <p>ログイン時刻:<%= @attendance&.log_attendance_time&.strftime("%-H時%-M分") %></p>
        <%= form.time_select :attendance_time %>
      </div>
   
      <div class="field">
       <%= form.label :勤務終了 %>
+      <p>ログイン時刻:<%= @attendance&.log_leave_time&.strftime("%-H時%-M分") %></p>
       <%= form.time_select :leave_office_time %>
     </div>
   
