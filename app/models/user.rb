@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :attendances, dependent: :destroy
-  has_many :holidays
+  has_many :holidays, through: :employee_id
 
 
   enum role: { general: 0, superuser: 1, admin: 2 }

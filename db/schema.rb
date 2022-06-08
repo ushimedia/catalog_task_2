@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 2022_05_25_070255) do
     t.date "paid_holiday", null: false
     t.boolean "result", default: false, null: false
     t.bigint "approver"
+    t.bigint "employee_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_id"], name: "index_holidays_on_employee_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +53,5 @@ ActiveRecord::Schema.define(version: 2022_05_25_070255) do
   end
 
   add_foreign_key "attendances", "users"
+  add_foreign_key "holidays", "users", column: "employee_id"
 end
