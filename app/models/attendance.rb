@@ -1,6 +1,5 @@
 class Attendance < ApplicationRecord
     belongs_to :user
-    has_many :logs, through: :user
     validates :attendance_date, presence: true, uniqueness: { scope: :user_id }
    # validate :start_end_check, if: published?
 

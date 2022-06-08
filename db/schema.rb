@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_070702) do
+ActiveRecord::Schema.define(version: 2022_05_25_070255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,16 +35,6 @@ ActiveRecord::Schema.define(version: 2022_06_01_070702) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "logs", force: :cascade do |t|
-    t.bigint "user_id"
-    t.date "log_date"
-    t.datetime "log_time"
-    t.integer "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_logs_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,5 +51,4 @@ ActiveRecord::Schema.define(version: 2022_06_01_070702) do
   end
 
   add_foreign_key "attendances", "users"
-  add_foreign_key "logs", "users"
 end

@@ -9,9 +9,7 @@ class AttendancesController < ApplicationController
     @user = current_user
     @attendance = Attendance.new
     
-    @logs =Log.where(user_id: current_user.id)
-    logs = @logs
-    @logs = current_user.logs
+    
   end  
 
   # GET /attendances/1 or /attendances/1.json
