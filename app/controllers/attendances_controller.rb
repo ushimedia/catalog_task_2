@@ -45,8 +45,7 @@ class AttendancesController < ApplicationController
       else
       #  format.html { render :new, status: :unprocessable_entity }
         format.html {  
-          render "index" ,notice: "勤怠登録日に重複があるか、出勤・退勤時刻に間違いがある可能性があります。もう一度ご確認のうえ登録をお願いいたします。"
-      return
+          redirect_to attendances_path(@attendance), notice: "勤怠登録日に重複があるか、出勤・退勤時刻に間違いがある可能性があります。もう一度ご確認のうえ登録をお願いいたします。"
       }
         format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end
@@ -57,7 +56,7 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to attendances_path(@attendance), notice: "Attendance was successfully updated." }
+        format.html { redirect_to attendances_path(@attendance), notice: "勤怠の修正が完了いたしました。" }
         format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit, status: :unprocessable_entity }
