@@ -163,9 +163,6 @@ GEM
     public_suffix (4.0.7)
     puma (4.3.12)
       nio4r (~> 2.0)
-    punch_time (0.1.6)
-      activemodel
-      activesupport
     racc (1.6.0)
     rack (2.2.3)
     rack-proxy (0.7.2)
@@ -300,7 +297,6 @@ DEPENDENCIES
   net-smtp
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
-  punch_time
   rails (~> 6.0.3)
   rails_admin (~> 3.0)
   rexml
