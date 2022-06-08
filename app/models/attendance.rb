@@ -1,10 +1,15 @@
 class Attendance < ApplicationRecord
     belongs_to :user
     validates :attendance_date, presence: true, uniqueness: { scope: :user_id }
-    validate :start_end_check, on: :create
+    validate :start_finish_check, on: :create
     validate :start_end_check, on: :update
     def start_time
         self.attendance_date #self.の後はsimple_calendarに表示させるためのカラムを指定
+      end
+
+      def start_finish_check
+        
+        self.attendance_time < self.leave_office_time
       end
 
     def start_end_check

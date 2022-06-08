@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2022_05_25_070255) do
 
   create_table "attendances", force: :cascade do |t|
     t.date "attendance_date"
-    t.datetime "attendance_time"
-    t.datetime "leave_office_time"
+    t.time "attendance_time"
+    t.time "leave_office_time"
     t.datetime "log_attendance_time"
     t.datetime "log_leave_time"
     t.datetime "created_at", precision: 6, null: false

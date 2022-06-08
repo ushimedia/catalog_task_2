@@ -37,15 +37,14 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(attendance_params)
     @attendance.user = current_user
-    @attendance.attendance_date = @attendance.attendance_time
+   
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to attendances_path(@attendance), notice: "今日も一日お疲れさまでした！" }
         format.json { render :show, status: :created, location: @attendance }
       else
-      #  format.html { render :new, status: :unprocessable_entity }
         format.html {  
-          redirect_to attendances_path(@attendance), notice: "勤怠登録日に重複があるか、出勤・退勤時刻に間違いがある可能性があります。もう一度ご確認のうえ登録をお願いいたします。"
+          redirect_to attendances_path(@attendance), notice: "登録したい勤怠日が重複しているか、出勤・退勤時刻に間違いがある可能性があります。打刻時間を変更したい場合は修正からお願いいたします。"
       }
         format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end
@@ -70,7 +69,7 @@ class AttendancesController < ApplicationController
     @attendance.destroy
 
     respond_to do |format|
-      format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
+      format.html { redirect_to attendances_url, notice: "登録を削除いたしました。" }
       format.json { head :no_content }
     end
   end

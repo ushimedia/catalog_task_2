@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
+       <%= form.label :勤務日　%>
+       <%= form.date_select :attendance_date %>
+     </div>
+
+  <div class="field">
        <%= form.label :勤務開始 %>
-       <%= form.datetime_select :attendance_time %>
+       <%= form.time_select :attendance_time %>
      </div>
   
      <div class="field">

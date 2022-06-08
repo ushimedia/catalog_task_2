@@ -1,18 +1,14 @@
 ---
 ja:
   activerecord:
-    models:
-      attendance: 勤怠
-    attributes:
-      attendance:
-        leave_office_time: 勤務終了時間
-  activerecord:
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  attendance:
+    leave_office_time: "勤務終了時間"
   date:
     abbr_day_names:
     - 日
