@@ -7,8 +7,11 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-  attendance:
-    leave_office_time: "勤務終了時間"
+    models:
+      attendance:
+    attributes:
+      attendance:           
+        leave_office_time: 退勤 
   date:
     abbr_day_names:
     - 日
