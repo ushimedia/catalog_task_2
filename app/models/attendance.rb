@@ -1,16 +1,20 @@
 class Attendance < ApplicationRecord
     belongs_to :user
     validates :attendance_date, presence: true, uniqueness: { scope: :user_id }
-    validate :start_finish_check, on: :create
+    validate :valid_eligiblity_range?, on: :create
     validate :start_end_check, on: :update
     def start_time
         self.attendance_date #self.の後はsimple_calendarに表示させるためのカラムを指定
       end
 
-      def start_finish_check
-        
-        self.attendance_time < self.leave_office_time
-      end
+    def valid_eligiblity_range?
+        return unless leave_office_time? && attendance_time?
+    
+        if !leave_office_time.after?(attendance_time)
+          errors.add(:leave_office_time, "の時間を正しく記入してください。")
+        end
+    end
+
 
     def start_end_check
         errors.add(:leave_office_time, "の時間を正しく記入してください。") unless
