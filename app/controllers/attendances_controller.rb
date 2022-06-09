@@ -44,7 +44,7 @@ class AttendancesController < ApplicationController
         format.json { render :show, status: :created, location: @attendance }
       else
         format.html {  
-          redirect_to attendances_path(@attendance), notice: "登録したい勤怠日が重複しているか、出勤・退勤時刻に間違いがある可能性があります。打刻時間を変更したい場合は修正からお願いいたします。"
+          redirect_to attendances_path(@attendance), notice: "登録したい勤怠日が重複しているか、出勤・退勤時刻の前後に間違いがある可能性があります。また打刻時間を変更したい場合は修正からお願いいたします。"
       }
         format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end

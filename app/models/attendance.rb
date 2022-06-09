@@ -17,7 +17,7 @@ class Attendance < ApplicationRecord
 
 
     def start_end_check
-        errors.add(:leave_office_time, "の時間を正しく記入してください。") unless
+        errors.add(:leave_office_time, "の時間は勤務開始より後の時刻でご登録ください。") unless
         self.attendance_time < self.leave_office_time
       end
 
